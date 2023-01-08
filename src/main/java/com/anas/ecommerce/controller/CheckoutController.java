@@ -3,10 +3,8 @@ package com.anas.ecommerce.controller;
 import com.anas.ecommerce.dto.Purchase;
 import com.anas.ecommerce.dto.PurchaseResponse;
 import com.anas.ecommerce.service.CheckoutService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/checkout")
 public class CheckoutController {
@@ -21,6 +19,17 @@ public class CheckoutController {
     public PurchaseResponse placeOrder(@RequestBody Purchase purchase) {
 
         PurchaseResponse purchaseResponse = checkoutService.placeOrder(purchase);
+
         return purchaseResponse;
     }
+
 }
+
+
+
+
+
+
+
+
+

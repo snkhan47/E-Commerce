@@ -25,11 +25,14 @@ public class SecurityConfiguration {
             http.cors();
 
         //add content negotiation strategy
-//        http.setSharedObject(ContentNegotiationStrategy.class,
-//                             new HeaderContentNegotiationStrategy());
+        //http.setSharedObject(ContentNegotiationStrategy.class,
+        //                     new HeaderContentNegotiationStrategy());
 
         //force a non-empty response body for 401 to make the response more friendly
         //Okta.configureResourceServer401ResponseBody(http);
+
+        //disable csrf since we are not using cookies for session tracking
+        http.csrf().disable();
 
         return http.build();
     }
